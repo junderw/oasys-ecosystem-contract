@@ -29,7 +29,7 @@ library TealswapLibrary {
                     hex'ff',
                     factory,
                     keccak256(abi.encodePacked(token0, token1)),
-                    hex'9690b3663a0ea0887f1b44a4a80a71bb6a9c3bbab71f1777cb5a31e95ffdb5e1' // init code hash
+                    hex'4c617d0b01ec3bdb54c1da74a5e8c2a1a6197da15cfaab3f15b42ef728438fe1' // init code hash
                 )))
             )
         );

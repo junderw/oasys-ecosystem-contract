@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.6.11;
-import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-import '@openzeppelin/contracts/token/ERC20/SafeERC20.sol';
-import '@openzeppelin/contracts/utils/Address.sol';
+import '@openzeppelin/contracts-3.2.0/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts-3.2.0/token/ERC20/SafeERC20.sol';
+import '@openzeppelin/contracts-3.2.0/utils/Address.sol';
 
 /**
  * @title ExchangeDeposit
@@ -45,19 +45,21 @@ contract ExchangeDeposit {
      * @dev The address of this ExchangeDeposit instance. This is used
      * for discerning whether we are a Proxy or an ExchangeDepsosit.
      */
-    address payable private immutable thisAddress;
+    address payable public immutable thisAddress;
 
     /**
      * @notice Create the contract, and sets the destination address.
      * @param coldAddr See storage coldAddress
      * @param adminAddr See storage adminAddress
+     * @param thisAddr See storage thisAddress
      */
-    constructor(address payable coldAddr, address payable adminAddr) public {
+    constructor(address payable coldAddr, address payable adminAddr, address payable thisAddr) public {
         require(coldAddr != address(0), '0x0 is an invalid address');
         require(adminAddr != address(0), '0x0 is an invalid address');
+        require(thisAddr != address(0), '0x0 is an invalid address');
         coldAddress = coldAddr;
         adminAddress = adminAddr;
-        thisAddress = address(this);
+        thisAddress = thisAddr;
     }
 
     /**

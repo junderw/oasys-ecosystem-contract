@@ -1,9 +1,16 @@
 {
   "name": "hardhat-project",
+  "scripts": {
+    "node": "npx hardhat node",
+    "build": "hardhat compile",
+    "task:bitbank": "npx hardhat bitbank --network localhost --output ./outputs/bitbank.json"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts-3.2.0": "npm:@openzeppelin/contracts@^3.2.0",
     "hardhat": "^2.12.1",
+    "prettier": "^2.8.4",
     "solc": "^0.8.9"
   }
 }

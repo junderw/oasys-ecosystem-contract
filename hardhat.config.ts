@@ -2,6 +2,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
 import "./tasks/bitbank";
+import "./tasks/bitbankVerify";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -15,6 +16,11 @@ const config: HardhatUserConfig = {
         settings: { optimizer: { enabled: true, runs: 200 } },
       },
     ],
+  },
+  networks: {
+    custom: {
+      url: process.env["CUSTOM_RPCURL"] || "PLEASE SET ENV CUSTOM_RPCURL TO NETWORK HTTP RPC",
+    },
   },
 };
 

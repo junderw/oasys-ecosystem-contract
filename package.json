@@ -3,7 +3,8 @@
   "scripts": {
     "node": "npx hardhat node",
     "build": "hardhat compile",
-    "task:bitbank": "npx hardhat bitbank --network localhost --output ./outputs/bitbank.json"
+    "task:bitbank": "npx hardhat bitbank --network localhost --output ./outputs/bitbank.json",
+    "task:bitbankVerify": "npx hardhat bitbankVerify --network custom --input ./outputs/bitbank.json"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
